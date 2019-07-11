@@ -17,11 +17,16 @@ io.on("connection", socket => {
 
   // Handle chat event
   socket.on("chat", data => {
-    // console.log(data);
     io.sockets.emit("chat", data);
   });
 
   socket.on("typing", data => {
     socket.broadcast.emit("typing", data);
+  });
+
+  // Gets user count
+  io.clients((error, data) => {
+    if (error) throw error;
+    io.sockets.emit("userCount", data);
   });
 });

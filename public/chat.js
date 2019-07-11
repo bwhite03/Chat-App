@@ -1,12 +1,15 @@
 // Make connection
 const socket = io.connect("http://localhost:5000");
 
+let users;
+
 // Select DOM
 const message = document.getElementById("message"),
   handle = document.getElementById("handle"),
   btn = document.getElementById("send"),
   output = document.getElementById("output"),
-  feedback = document.getElementById("feedback");
+  feedback = document.getElementById("feedback"),
+  userCount = document.getElementById("user-count");
 
 // Events
 btn.addEventListener("click", () => {
@@ -34,4 +37,8 @@ socket.on("chat", data => {
 
 socket.on("typing", data => {
   feedback.innerHTML = "<p><em>" + data + "is typing a message...</em></p>";
+});
+
+socket.on("userCount", data => {
+  userCount.innerHTML = "<p>" + "Users:" + data.length + "</p>";
 });
