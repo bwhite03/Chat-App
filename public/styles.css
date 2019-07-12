@@ -1,25 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
 body {
-  font-family: "Nunito";
+  font-family: "Alegreya", serif;
 }
 
-h2 {
-  font-size: 18px;
-  padding: 10px 20px;
-  color: #575ed8;
+#container {
+  display: flex;
 }
 
+/* Room styles */
+#rooms {
+  width: 25%;
+  height: 100vh;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.rooms-title {
+  text-align: center;
+  padding: 20px;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.room {
+  padding: 30px;
+  font-size: 20px;
+}
+
+.room:hover {
+  border-left: 5px solid black;
+}
+
+.fa-comment-dots,
+.fa-gamepad,
+.fa-code,
+.fa-music {
+  padding-right: 10px;
+}
+
+/* Chat styles */
 #chat {
-  max-width: 600px;
-  margin: 30px auto;
-  border: 1px solid #ddd;
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.05);
-  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  padding: 20px 40px;
+  background: #f9f9f9;
 }
 
-#chat-window {
-  height: 400px;
+.chat-title {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+input[name="username"] {
+  padding: 0 10px;
+}
+
+.chat-window {
+  flex-grow: 1;
+  height: 0px;
   overflow: auto;
-  background: #f9f9f9;
+}
+
+/* Input styles */
+.send-message {
+  display: flex;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.input-container {
+  width: 85%;
+}
+
+input[name="message"] {
+  padding: 12px 20px;
+  width: 100%;
+}
+
+.button-container {
+  width: 15%;
+}
+
+#send {
+  text-align: center;
+  padding: 12px 0;
+  width: 100%;
+  background-color: white;
+  color: black;
+  border: 2px solid #4caf50; /* Green */
 }
 
 #output p {
@@ -37,33 +111,4 @@ h2 {
 
 #output strong {
   color: #575ed8;
-}
-
-label {
-  box-sizing: border-box;
-  display: block;
-  padding: 10px 20px;
-}
-
-input {
-  padding: 10px 20px;
-  box-sizing: border-box;
-  background: #eee;
-  border: 0;
-  display: block;
-  width: 100%;
-  background: #fff;
-  border-bottom: 1px solid #eee;
-  font-family: Nunito;
-  font-size: 16px;
-}
-
-button {
-  background: #575ed8;
-  color: #fff;
-  font-size: 18px;
-  border: 0;
-  padding: 12px 0;
-  width: 100%;
-  border-radius: 0 0 2px 2px;
 }

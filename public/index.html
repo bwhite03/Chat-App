@@ -5,21 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
-    <link href="/styles.css" rel="stylesheet" />
+    <link href="reset.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Alegreya:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/ccf1326a8d.js"></script>
+    <link href="styles.css" rel="stylesheet" />
     <title>Chat App</title>
   </head>
   <body>
-    <div id="chat">
-      <h2>Chat App</h2>
-      <div id="user-count"></div>
-      <div id="chat-window">
-        <div id="output"></div>
-        <div id="feedback"></div>
-      </div>
-      <input id="handle" type="text" placeholder="Handle" />
-      <input id="message" type="text" placeholder="Message" />
-      <button id="send">Send</button>
+    <div id="container">
+      <section id="rooms">
+        <h1 class="rooms-title">Rooms</h1>
+        <div class="rooms-container">
+          <div class="room"><i class="far fa-comment-dots"></i>Chat</div>
+          <div class="room"><i class="fas fa-gamepad"></i>Gaming</div>
+          <div class="room"><i class="fas fa-code"></i>Development</div>
+          <div class="room"><i class="fas fa-music"></i>Music</div>
+        </div>
+      </section>
+      <section id="chat">
+        <div class="chat-title">
+          <h1>Chat</h1>
+          <input
+            id="handle"
+            type="text"
+            name="username"
+            placeholder="Username"
+          />
+        </div>
+        <div class="chat-window">
+          <div id="output"></div>
+          <div id="feedback"></div>
+        </div>
+        <div class="send-message">
+          <div class="input-container">
+            <input
+              id="message"
+              type="text"
+              name="message"
+              placeholder="Message"
+            />
+          </div>
+          <div class="button-container">
+            <button id="send">Send</button>
+          </div>
+        </div>
+      </section>
     </div>
-    <script src="/chat.js"></script>
+    <script src="chat.js"></script>
   </body>
 </html>
+
+<!-- <div id="chat">
+  <h2>Chat App</h2>
+  <div id="user-count"></div>
+  <div id="chat-window">
+    <div id="output"></div>
+    <div id="feedback"></div>
+  </div>
+  <input id="handle" type="text" placeholder="Handle" />
+  <input id="message" type="text" placeholder="Message" />
+  <button id="send">Send</button>
+</div> -->
