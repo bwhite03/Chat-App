@@ -19,10 +19,34 @@
       <section id="rooms">
         <h1 class="rooms-title">Rooms</h1>
         <div class="rooms-container">
-          <div class="room"><i class="far fa-comment-dots"></i>Chat</div>
-          <div class="room"><i class="fas fa-gamepad"></i>Gaming</div>
-          <div class="room"><i class="fas fa-code"></i>Development</div>
-          <div class="room"><i class="fas fa-music"></i>Music</div>
+          <div id="chat-room" class="room">
+            <i class="far fa-comment-dots"></i>Chat
+            <div>
+              <button id="join-chat-room">Join</button>
+              <button id="leave-chat-room">Leave</button>
+            </div>
+          </div>
+          <div id="gaming-room" class="room">
+            <i class="fas fa-gamepad"></i>Gaming
+            <div>
+              <button id="join-gaming-room">Join</button>
+              <button id="leave-gaming-room">Leave</button>
+            </div>
+          </div>
+          <div id="dev-room" class="room">
+            <i class="fas fa-code"></i>Development
+            <div>
+              <button id="join-dev-room">Join</button>
+              <button id="leave-dev-room">Leave</button>
+            </div>
+          </div>
+          <div id="music-room" class="room">
+            <i class="fas fa-music"></i>Music
+            <div>
+              <button id="join-music-room">Join</button>
+              <button id="leave-music-room">Leave</button>
+            </div>
+          </div>
         </div>
       </section>
       <section id="chat">
@@ -45,7 +69,7 @@
               id="message"
               type="text"
               name="message"
-              placeholder="Message"
+              placeholder="Enter message..."
             />
           </div>
           <div class="button-container">
@@ -57,15 +81,3 @@
     <script src="chat.js"></script>
   </body>
 </html>
-
-<!-- <div id="chat">
-  <h2>Chat App</h2>
-  <div id="user-count"></div>
-  <div id="chat-window">
-    <div id="output"></div>
-    <div id="feedback"></div>
-  </div>
-  <input id="handle" type="text" placeholder="Handle" />
-  <input id="message" type="text" placeholder="Message" />
-  <button id="send">Send</button>
-</div> -->

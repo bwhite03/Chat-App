@@ -62,6 +62,7 @@ input[name="username"] {
 }
 
 .chat-window {
+  padding-top: 10px;
   flex-grow: 1;
   height: 0px;
   overflow: auto;
@@ -93,7 +94,7 @@ input[name="message"] {
   width: 100%;
   background-color: white;
   color: black;
-  border: 2px solid #4caf50; /* Green */
+  border: 2px solid #4caf50;
 }
 
 #output p {

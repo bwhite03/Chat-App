@@ -15,14 +15,33 @@ const io = socket(server);
 io.on("connection", socket => {
   console.log("made socket connection");
 
-  // Handle chat event
-  socket.on("chat", data => {
-    io.sockets.emit("chat", data);
+  // Join room
+  socket.on("join", room => {
+    socket.join(room);
+    console.log("Joined " + room);
   });
 
-  socket.on("typing", data => {
-    socket.broadcast.emit("typing", data);
+  // Leave room
+  socket.on("leave", room => {
+    socket.leave(room);
+    console.log("left " + room);
   });
+
+  // Handle chat events for multiple roooms
+  socket.on("chat", data => io.sockets.to("chat").emit("chat", data));
+  socket.on("chat", data => io.sockets.to("gaming").emit("chat", data));
+  socket.on("chat", data => io.sockets.to("dev").emit("chat", data));
+  socket.on("chat", data => io.sockets.to("music").emit("chat", data));
+
+  // Handle typing event for multiple rooms
+  socket.on("typing", data => socket.broadcast.to("chat").emit("typing", data));
+  socket.on("typing", data =>
+    socket.broadcast.to("gaming").emit("typing", data)
+  );
+  socket.on("typing", data => socket.broadcast.to("dev").emit("typing", data));
+  socket.on("typing", data =>
+    socket.broadcast.to("music").emit("typing", data)
+  );
 
   // Gets user count
   io.clients((error, data) => {
