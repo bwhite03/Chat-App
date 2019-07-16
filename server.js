@@ -19,12 +19,48 @@ io.on("connection", socket => {
   socket.on("join", room => {
     socket.join(room);
     console.log("Joined " + room);
+
+    // Show user count in room when joining
+    io.in("chat").clients((error, data) => {
+      if (error) throw error;
+      io.sockets.emit("chatRoomCount", data);
+    });
+    io.in("gaming").clients((error, data) => {
+      if (error) throw error;
+      io.sockets.emit("gamingRoomCount", data);
+    });
+    io.in("dev").clients((error, data) => {
+      if (error) throw error;
+      io.sockets.emit("devRoomCount", data);
+    });
+    io.in("music").clients((error, data) => {
+      if (error) throw error;
+      io.sockets.emit("musicRoomCount", data);
+    });
   });
 
   // Leave room
   socket.on("leave", room => {
     socket.leave(room);
     console.log("left " + room);
+
+    // Show user count in room when leaving
+    io.in("chat").clients((error, data) => {
+      if (error) throw error;
+      io.sockets.emit("chatRoomCount", data);
+    });
+    io.in("gaming").clients((error, data) => {
+      if (error) throw error;
+      io.sockets.emit("gamingRoomCount", data);
+    });
+    io.in("dev").clients((error, data) => {
+      if (error) throw error;
+      io.sockets.emit("devRoomCount", data);
+    });
+    io.in("music").clients((error, data) => {
+      if (error) throw error;
+      io.sockets.emit("musicRoomCount", data);
+    });
   });
 
   // Handle chat events for multiple roooms
@@ -47,5 +83,28 @@ io.on("connection", socket => {
   io.clients((error, data) => {
     if (error) throw error;
     io.sockets.emit("userCount", data);
+  });
+
+  // io.clients((error, data) => {
+  //   if (error) throw error;
+  //   io.sockets.emit("userCount", data);
+  // });
+
+  // Show user count in room when connected
+  io.in("chat").clients((error, data) => {
+    if (error) throw error;
+    io.sockets.emit("chatRoomCount", data);
+  });
+  io.in("gaming").clients((error, data) => {
+    if (error) throw error;
+    io.sockets.emit("gamingRoomCount", data);
+  });
+  io.in("dev").clients((error, data) => {
+    if (error) throw error;
+    io.sockets.emit("devRoomCount", data);
+  });
+  io.in("music").clients((error, data) => {
+    if (error) throw error;
+    io.sockets.emit("musicRoomCount", data);
   });
 });

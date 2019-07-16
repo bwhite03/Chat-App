@@ -8,6 +8,10 @@ const message = document.getElementById("message"),
   output = document.getElementById("output"),
   feedback = document.getElementById("feedback"),
   userCount = document.getElementById("user-count"),
+  chatRoomCount = document.getElementById("chat-room-count"),
+  gamingRoomCount = document.getElementById("gaming-room-count"),
+  devRoomCount = document.getElementById("dev-room-count"),
+  musicRoomCount = document.getElementById("music-room-count"),
   joinChatRoom = document.getElementById("join-chat-room"),
   styleChatRoom = document.getElementById("chat-room"),
   leaveChatRoom = document.getElementById("leave-chat-room"),
@@ -115,3 +119,16 @@ socket.on("typing", data => {
 // socket.on("userCount", data => {
 //   userCount.innerHTML = "<p>" + "Users:" + data.length + "</p>";
 // });
+
+socket.on("chatRoomCount", data => {
+  chatRoomCount.innerHTML = "<p>" + "Users:" + data.length + "</p>";
+});
+socket.on("gamingRoomCount", data => {
+  gamingRoomCount.innerHTML = "<p>" + "Users:" + data.length + "</p>";
+});
+socket.on("devRoomCount", data => {
+  devRoomCount.innerHTML = "<p>" + "Users:" + data.length + "</p>";
+});
+socket.on("musicRoomCount", data => {
+  musicRoomCount.innerHTML = "<p>" + "Users:" + data.length + "</p>";
+});
