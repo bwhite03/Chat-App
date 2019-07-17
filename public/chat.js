@@ -120,6 +120,7 @@ socket.on("typing", data => {
 //   userCount.innerHTML = "<p>" + "Users:" + data.length + "</p>";
 // });
 
+// User count in each chat room
 socket.on("chatRoomCount", data => {
   chatRoomCount.innerHTML = "<p>" + "Users:" + data.length + "</p>";
 });
@@ -132,3 +133,16 @@ socket.on("devRoomCount", data => {
 socket.on("musicRoomCount", data => {
   musicRoomCount.innerHTML = "<p>" + "Users:" + data.length + "</p>";
 });
+
+// Welcome messages
+socket.on(
+  "welcome",
+  data =>
+    (output.innerHTML =
+      "<p><strong>" +
+      '<i class="fas fa-crown"></i>' +
+      "Admin" +
+      ": </strong>" +
+      data +
+      "</p>")
+);

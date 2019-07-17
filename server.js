@@ -107,4 +107,7 @@ io.on("connection", socket => {
     if (error) throw error;
     io.sockets.emit("musicRoomCount", data);
   });
+
+  // Display welcome message
+  socket.emit("welcome", "Welcome, select a chat room to start chatting");
 });

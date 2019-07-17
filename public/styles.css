@@ -91,6 +91,10 @@ input[name="message"] {
   width: 15%;
 }
 
+.button {
+  cursor: pointer;
+}
+
 #send {
   text-align: center;
   height: 100%;
