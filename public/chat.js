@@ -32,56 +32,56 @@ const message = document.getElementById("message"),
 // Join / Leave chat
 joinChatRoom.addEventListener("click", () => {
   socket.emit("join", "chat");
-  styleChatRoom.style.background = "#E5E5E5";
+  styleChatRoom.style.background = "#485058";
   selectRoomTitle.innerHTML = "<h1>Chat room</h1>";
   allButtons.forEach(button => (button.disabled = true));
   leaveChatRoom.disabled = false;
 });
 leaveChatRoom.addEventListener("click", () => {
   socket.emit("leave", "chat");
-  styleChatRoom.style.background = "#fff";
+  styleChatRoom.style.background = "#343d46";
   selectRoomTitle.innerHTML = "<h1>Select room</h1>";
   allButtons.forEach(button => (button.disabled = false));
 });
 // Join / Leave gaming
 joinGamingRoom.addEventListener("click", () => {
   socket.emit("join", "gaming");
-  stylegamingRoom.style.background = "#E5E5E5";
+  stylegamingRoom.style.background = "#485058";
   selectRoomTitle.innerHTML = "<h1>Gaming room</h1>";
   allButtons.forEach(button => (button.disabled = true));
   leaveGamingRoom.disabled = false;
 });
 leaveGamingRoom.addEventListener("click", () => {
   socket.emit("leave", "gaming");
-  stylegamingRoom.style.background = "#fff";
+  stylegamingRoom.style.background = "#343d46";
   selectRoomTitle.innerHTML = "<h1>Select room</h1>";
   allButtons.forEach(button => (button.disabled = false));
 });
 // Join / Leave dev
 joinDevRoom.addEventListener("click", () => {
   socket.emit("join", "dev");
-  styleDevRoom.style.background = "#E5E5E5";
+  styleDevRoom.style.background = "#485058";
   selectRoomTitle.innerHTML = "<h1>Dev room</h1>";
   allButtons.forEach(button => (button.disabled = true));
   leaveDevRoom.disabled = false;
 });
 leaveDevRoom.addEventListener("click", () => {
   socket.emit("leave", "dev");
-  styleDevRoom.style.background = "#fff";
+  styleDevRoom.style.background = "#343d46";
   selectRoomTitle.innerHTML = "<h1>Select room</h1>";
   allButtons.forEach(button => (button.disabled = false));
 });
 // Join / Leave music
 joinMusicRoom.addEventListener("click", () => {
   socket.emit("join", "music");
-  styleMusicRoom.style.background = "#E5E5E5";
+  styleMusicRoom.style.background = "#485058";
   selectRoomTitle.innerHTML = "<h1>Music room</h1>";
   allButtons.forEach(button => (button.disabled = true));
   leaveMusicRoom.disabled = false;
 });
 leaveMusicRoom.addEventListener("click", () => {
   socket.emit("leave", "music");
-  styleMusicRoom.style.background = "#fff";
+  styleMusicRoom.style.background = "#343d46";
   selectRoomTitle.innerHTML = "<h1>Select room</h1>";
   allButtons.forEach(button => (button.disabled = false));
 });
