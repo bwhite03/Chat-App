@@ -101,6 +101,23 @@ btn.addEventListener("click", () => {
   message.value = "";
 });
 
+// Send Message Event with enter
+window.addEventListener("keydown", e => {
+  if (e.keyCode === 13) {
+    if (handle.value === "") {
+      handle.value = "Anonymous";
+    }
+    if (message.value === "") {
+      return null;
+    }
+    socket.emit("chat", {
+      message: message.value,
+      handle: handle.value
+    });
+    message.value = "";
+  }
+});
+
 message.addEventListener("keypress", () => {
   socket.emit("typing", handle.value);
 });
@@ -122,16 +139,16 @@ socket.on("typing", data => {
 
 // User count in each chat room
 socket.on("chatRoomCount", data => {
-  chatRoomCount.innerHTML = "<p>" + "Users:" + data.length + "</p>";
+  chatRoomCount.innerHTML = "<p>" + data.length + "</p>";
 });
 socket.on("gamingRoomCount", data => {
-  gamingRoomCount.innerHTML = "<p>" + "Users:" + data.length + "</p>";
+  gamingRoomCount.innerHTML = "<p>" + data.length + "</p>";
 });
 socket.on("devRoomCount", data => {
-  devRoomCount.innerHTML = "<p>" + "Users:" + data.length + "</p>";
+  devRoomCount.innerHTML = "<p>" + data.length + "</p>";
 });
 socket.on("musicRoomCount", data => {
-  musicRoomCount.innerHTML = "<p>" + "Users:" + data.length + "</p>";
+  musicRoomCount.innerHTML = "<p>" + data.length + "</p>";
 });
 
 // Welcome messages

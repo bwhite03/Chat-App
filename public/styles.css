@@ -126,6 +126,10 @@ input[name="message"] {
   color: #575ed8;
 }
 
-.user-count {
+.user-count-container {
   float: right;
+}
+
+.user-count {
+  display: inline-block;
 }
