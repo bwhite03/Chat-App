@@ -25,7 +25,10 @@ const message = document.getElementById("message"),
   styleMusicRoom = document.getElementById("music-room"),
   leaveMusicRoom = document.getElementById("leave-music-room"),
   selectRoomTitle = document.getElementById("select-room-title"),
-  allButtons = document.querySelectorAll(".button");
+  allButtons = document.querySelectorAll(".button"),
+  modal = document.getElementById("modal"),
+  modalButton = document.getElementById("modal-button"),
+  container = document.getElementById("container");
 
 // Events
 
@@ -163,3 +166,9 @@ socket.on(
       data +
       "</p>")
 );
+
+// Modal open / close
+modalButton.addEventListener("click", () => {
+  modal.style.display = "none";
+  container.style.opacity = 1;
+});
