@@ -152,3 +152,41 @@ input[name="message"] {
 .fa-crown {
   color: #adad42;
 }
+
+/* Modal styles */
+#modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px;
+  border: 1px solid #343d46;
+  background: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.modal-title {
+  padding-bottom: 10px;
+  font-size: 20px;
+  color: #343d46;
+}
+
+input[name="username"] {
+  padding: 12px 20px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.modal-button {
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  background: #343d46;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+}

@@ -68,12 +68,6 @@
       <section id="chat">
         <div class="chat-title">
           <h1 id="select-room-title">Select a room</h1>
-          <input
-            id="handle"
-            type="text"
-            name="username"
-            placeholder="Username"
-          />
         </div>
         <div class="chat-window">
           <div id="output"></div>
@@ -93,6 +87,16 @@
           </div>
         </div>
       </section>
+      <div id="modal">
+        <h1 class="modal-title">Choose a username</h1>
+        <input
+          id="handle"
+          type="text"
+          name="username"
+          placeholder="Enter Username..."
+        />
+        <button class="modal-button">Start Chatting</button>
+      </div>
     </div>
     <script src="chat.js"></script>
   </body>
