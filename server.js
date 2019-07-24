@@ -85,11 +85,6 @@ io.on("connection", socket => {
     io.sockets.emit("userCount", data);
   });
 
-  // io.clients((error, data) => {
-  //   if (error) throw error;
-  //   io.sockets.emit("userCount", data);
-  // });
-
   // Show user count in room when connected
   io.in("chat").clients((error, data) => {
     if (error) throw error;

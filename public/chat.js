@@ -28,7 +28,11 @@ const message = document.getElementById("message"),
   allButtons = document.querySelectorAll(".button"),
   modal = document.getElementById("modal"),
   modalButton = document.getElementById("modal-button"),
-  container = document.getElementById("container");
+  container = document.getElementById("container"),
+  hamburgerMenuOpen = document.getElementById("hamburger-menu"),
+  closeRooms = document.getElementById("close-rooms"),
+  chat = document.getElementById("chat"),
+  rooms = document.getElementById("rooms");
 
 // Events
 
@@ -136,10 +140,6 @@ socket.on("typing", data => {
   feedback.innerHTML = "<p><em>" + data + "is typing a message...</em></p>";
 });
 
-// socket.on("userCount", data => {
-//   userCount.innerHTML = "<p>" + "Users:" + data.length + "</p>";
-// });
-
 // User count in each chat room
 socket.on("chatRoomCount", data => {
   chatRoomCount.innerHTML = "<p>" + data.length + "</p>";
@@ -171,4 +171,13 @@ socket.on(
 modalButton.addEventListener("click", () => {
   modal.style.display = "none";
   container.style.opacity = 1;
+});
+
+// Hamburger-menu open / close
+hamburgerMenuOpen.addEventListener("click", () => {
+  rooms.classList.toggle("toggle");
+});
+
+closeRooms.addEventListener("click", () => {
+  rooms.classList.toggle("toggle");
 });

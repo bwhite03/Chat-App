@@ -16,12 +16,16 @@
   </head>
   <body>
     <div id="container">
-      <section id="rooms">
-        <h1 class="rooms-title">Rooms</h1>
+      <i id="hamburger-menu" class="fa fa-bars" aria-hidden="true"></i>
+      <section id="rooms" class="rooms">
+        <div class="room-title-container">
+          <h1 class="rooms-title">Rooms</h1>
+          <i id="close-rooms" class="fa fa-times" aria-hidden="true"></i>
+        </div>
         <div class="rooms-container">
           <div id="chat-room" class="room">
             <i class="far fa-comment-dots"></i>Chat
-            <div>
+            <div class="button-group">
               <button id="join-chat-room" class="button">Join</button>
               <button id="leave-chat-room" class="button">Leave</button>
               <div class="user-count-container">
@@ -32,7 +36,7 @@
           </div>
           <div id="gaming-room" class="room">
             <i class="fas fa-gamepad"></i>Gaming
-            <div>
+            <div class="button-group">
               <button id="join-gaming-room" class="button">Join</button>
               <button id="leave-gaming-room" class="button">Leave</button>
               <div class="user-count-container">
@@ -43,7 +47,7 @@
           </div>
           <div id="dev-room" class="room">
             <i class="fas fa-code"></i>Development
-            <div>
+            <div class="button-group">
               <button id="join-dev-room" class="button">Join</button>
               <button id="leave-dev-room" class="button">Leave</button>
               <div class="user-count-container">
@@ -54,7 +58,7 @@
           </div>
           <div id="music-room" class="room">
             <i class="fas fa-music"></i>Music
-            <div>
+            <div class="button-group">
               <button id="join-music-room" class="button">Join</button>
               <button id="leave-music-room" class="button">Leave</button>
               <div class="user-count-container">
