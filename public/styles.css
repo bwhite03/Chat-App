@@ -107,7 +107,7 @@ input[name="username"] {
 }
 
 .chat-window {
-  padding-top: 10px;
+  margin-top: 10px;
   flex-grow: 1;
   height: 0px;
   overflow: auto;
@@ -240,7 +240,10 @@ input[name="username"] {
     width: 100%;
   }
   .chat-title {
-    padding-top: 35px;
+    padding-left: 15px;
+  }
+  #modal {
+    width: 85%;
   }
 }
 
