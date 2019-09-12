@@ -248,6 +248,9 @@ input[name="username"] {
 }
 
 @media only screen and (max-width: 450px) {
+  .chat-title {
+    padding-left: 30px;
+  }
   #chat {
     padding: 20px;
   }
